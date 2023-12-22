@@ -11,6 +11,7 @@ const bookSchema = new Schema(
     favorite: { type: Boolean, default: false },
     genre: { type: String, enum: genreList, required: true },
     date: { type: String, match: dateRegexp, required: true },
+    owner: { type: Schema.Types.ObjectId, ref: "user", required: true },
   },
   { versionKey: false, timestamps: true }
 );
