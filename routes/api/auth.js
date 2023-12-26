@@ -10,6 +10,9 @@ router.post("/register", validateBody(schemas.registerSchema), ctrl.register);
 router.post("/login", validateBody(schemas.loginSchema), ctrl.login);
 router.get("/current", authenticate, ctrl.getCurrent);
 router.post("/logout", authenticate, ctrl.logout);
+
+// upload.fields([{name: "cover", maxCount: 1}, {name: "subcover", maxCount: 2}])
+// upload.array("cover", 8)
 router.patch(
   "/avatars",
   authenticate,
