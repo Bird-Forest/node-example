@@ -10,6 +10,7 @@ const app = express(); // app - веб-сервер
 const formatsLogger = app.get("env") === "development" ? "dev" : "short";
 app.use(cors()); // перехресні запити та передачі даних між  web-серверами
 app.use(express.json()); // для обробки формату запитів та відповіді - веб-сервер, frontend
+app.use(express.static("public")); // для збереження файлів
 
 app.use("/api/books", booksRouter); // обробляє маршрути вказуємо endpoint - /api/books
 app.use("/api/auth", authRouter);
